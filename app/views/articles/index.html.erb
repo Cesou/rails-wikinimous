@@ -1,0 +1,28 @@
+<div class="navbar-wagon">
+  <a href="/" class="navbar-wagon-brand">
+    <h1> Le blog de Bernard </h1>
+    <a><%= link_to " Add an article ", new_article_path, class:"btn btn-primary" %></a>
+  </a>
+</div>
+
+
+
+
+  <form action="#">
+    <div class="row" id="articles" >
+        <% @articles.each do |article| %>
+        <div class="col-xs-12 col-lg-4">
+          <div class= "article">
+            <h2><%= article.title.capitalize %></h2>
+            <a><%= link_to "more details", article_path(article) %></a>
+            <a><%= link_to "Edit", edit_article_path(article) %></a>
+            <a><%=link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" }%></a>
+          </div>
+    </div>
+      <% end %>
+    </div>
+  </form>
+
+
+
+
